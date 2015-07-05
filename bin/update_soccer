@@ -5,22 +5,21 @@ $:<< "#{path}/../lib"
 
 require 'update_soccer'
 
-data  = ARGV[0]
-case data
+case ARGV[0]
 when "live", "-l", "--live"
-  UpdateSoccer::Runner.new(data).run!
+  UpdateSoccer::Runner.new("live").run!
 when "italy", "-ita", "--italy"
-  UpdateSoccer::Runner.new(data).run!
+  UpdateSoccer::Runner.new("italy").run!
 when "england", "-uk", "--england"
-  UpdateSoccer::Runner.new(data).run!
+  UpdateSoccer::Runner.new("england").run!
 when "spain", "-esp", "--spain"
-  UpdateSoccer::Runner.new(data).run!
+  UpdateSoccer::Runner.new("spain").run!
 when "germany", "-deu", "--germany"
-  UpdateSoccer::Runner.new(data).run!
+  UpdateSoccer::Runner.new("germany").run!
 when "france", "-fra", "--france"
-  UpdateSoccer::Runner.new(data).run!
+  UpdateSoccer::Runner.new("france").run!
 when "holland", "-nld", "--holland"
-  UpdateSoccer::Runner.new(data).run!
+  UpdateSoccer::Runner.new("holland").run!
 when "help", "--help"
   puts "\nOptions:"
   puts "live/-l/--live \t \t returns Live soccer."
