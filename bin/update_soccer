@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+
+path = File.expand_path(File.dirname(__FILE__))
+$:<< "#{path}/../lib"
+
+require 'update_soccer'
+
+data  = ARGV[0]
+case data
+when "live", "-l", "--live"
+  UpdateSoccer::Runner.new(data).run!
+when "italy", "-ita", "--italy"
+  UpdateSoccer::Runner.new(data).run!
+when "england", "-uk", "--england"
+  UpdateSoccer::Runner.new(data).run!
+when "spain", "-esp", "--spain"
+  UpdateSoccer::Runner.new(data).run!
+when "germany", "-deu", "--germany"
+  UpdateSoccer::Runner.new(data).run!
+when "france", "-fra", "--france"
+  UpdateSoccer::Runner.new(data).run!
+when "holland", "-nld", "--holland"
+  UpdateSoccer::Runner.new(data).run!
+when "help", "--help"
+  puts "\nOptions:"
+  puts "live/-l/--live \t \t returns Live soccer."
+  puts "italy/-ita/--italy\t returns Italy League."
+  puts "spain/-esp/--spain\t returns Spain League."
+  puts "england/-uk/--england\t returns England League."
+  puts "germany/-deu/--germany\t returns Germany League."
+  puts "france/-fra/--france\t returns France League."
+  puts "holland/-nld/--holland\t returns Holland League."
+  puts "*no options* \t\t returns the Live Soccer."
+  puts "\n"
+else
+  UpdateSoccer::Runner.new("live").run!
+end
